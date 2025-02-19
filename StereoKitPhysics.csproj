@@ -1,15 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<OutputType>Exe</OutputType>
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
-    
-		<ApplicationIcon>App.ico</ApplicationIcon>
-  </PropertyGroup>
+		<ApplicationIcon>Platforms\Net\App.ico</ApplicationIcon>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="StereoKit" Version="0.3.7-preview.1811" />
-    <PackageReference Include="BepuPhysics" Version="2.4" />
-  </ItemGroup>
-  
+	<ItemGroup>
+		<!--Don't compile Android code in this project, but do show it in the
+		    explorer window.-->
+		<Compile Remove="**\*.Android.cs" />
+		<Compile Remove="Platforms\Android\**" />
+		<None Include="**\*.Android.cs" />
+		<None Include="Platforms\Android\**" />
+
+		<Compile Remove="Projects\**" />
+		<EmbeddedResource Remove="Projects\**" />
+		<None Remove="Projects\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="StereoKit" Version="0.3.10-preview.7" />
+		<PackageReference Include="BepuPhysics" Version="2.4" />
+	</ItemGroup>
 </Project>

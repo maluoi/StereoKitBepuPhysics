@@ -50,8 +50,10 @@ public static class Program
 		SK.Run(() =>
 		{
 			// Step the physics simulation
-			while (simTime < Time.Total)
+			int max = 2; // cap steps to prevent death spirals
+			while (simTime < Time.Total && max > 0)
 			{
+				max--;
 				sim.Timestep(simStep, dispatcher);
 				simTime += simStep;
 			}

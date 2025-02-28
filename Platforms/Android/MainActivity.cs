@@ -9,7 +9,7 @@ using System;
 using System.Reflection;
 using System.Threading;
 
-namespace StereoKitBepuPhysics;
+namespace StereoKitPhysics;
 
 [Activity(Label = "@string/app_name", MainLauncher = true, Exported = true)]
 [IntentFilter(new[]{Intent.ActionMain}, Categories = new[]{"org.khronos.openxr.intent.category.IMMERSIVE_HMD", "com.oculus.intent.category.VR", Intent.CategoryLauncher})]
